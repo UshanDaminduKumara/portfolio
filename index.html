@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ushan Damindu Kumara - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mint: {
+                            lightest: '#E6FFFA',
+                            light: '#B2F5EA',
+                            medium: '#48BB78',
+                            dark: '#2F855A',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        @keyframes ping {
+            75%, 100% { transform: scale(2); opacity: 0; }
+        }
+        .animate-ping { animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite; }
+        .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+    </style>
+</head>
+<body class="antialiased font-sans text-gray-900 bg-white">
+    <!-- Navbar -->
+    <nav id="navbar" class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center"></div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-sm font-black uppercase tracking-widest transition-all hover:text-mint-medium text-mint-medium border-b-2 border-mint-medium">Home</a>
+                    <a href="#about" class="text-sm font-black uppercase tracking-widest transition-all hover:text-mint-medium text-gray-400">About</a>
+                    <a href="#services" class="text-sm font-black uppercase tracking-widest transition-all hover:text-mint-medium text-gray-400">Services</a>
+                    <a href="#portfolio" class="text-sm font-black uppercase tracking-widest transition-all hover:text-mint-medium text-gray-400">Projects</a>
+                    <a href="#contact" class="text-sm font-black uppercase tracking-widest transition-all hover:text-mint-medium text-gray-400">Contact</a>
+                    <button onclick="openCVModal()" class="bg-mint-medium text-white px-6 py-2 rounded-full text-sm font-black uppercase tracking-widest hover:bg-mint-dark transition-all shadow-md active:scale-95">CV</button>
+                </div>
+                <div class="flex md:hidden items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-mint-medium focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 py-6 px-4 space-y-4 shadow-xl">
+            <a href="#home" class="block text-xl font-black text-gray-800 hover:text-mint-medium">Home</a>
+            <a href="#about" class="block text-xl font-black text-gray-800 hover:text-mint-medium">About</a>
+            <a href="#services" class="block text-xl font-black text-gray-800 hover:text-mint-medium">Services</a>
+            <a href="#portfolio" class="block text-xl font-black text-gray-800 hover:text-mint-medium">Projects</a>
+            <a href="#contact" class="block text-xl font-black text-gray-800 hover:text-mint-medium">Contact</a>
+            <button onclick="openCVModal()" class="w-full bg-mint-medium text-white py-4 rounded-2xl text-lg font-black uppercase tracking-widest">Download CV</button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="min-h-[calc(100vh-64px)] flex items-center justify-center bg-mint-lightest/20 relative overflow-hidden">
+            <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[800px] h-[800px] bg-mint-light/40 rounded-full blur-[120px] opacity-60 pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-mint-medium/10 rounded-full blur-[100px] opacity-60 pointer-events-none"></div>
+            
+            <div class="max-w-screen-2xl mx-auto px-6 sm:px-10 lg:px-16 py-12 flex flex-col lg:flex-row items-center relative z-10 w-full">
+                <div class="lg:w-1/2 flex justify-center mb-16 lg:mb-0 order-1 lg:order-2">
+                    <div class="relative group">
+                        <div class="absolute -inset-10 bg-gradient-to-tr from-mint-medium/20 to-teal-400/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition duration-1000"></div>
+                        <div class="relative p-2 rounded-full bg-gradient-to-b from-mint-light to-white shadow-2xl">
+                            <div class="relative w-72 h-72 sm:w-96 sm:h-96 xl:w-[500px] xl:h-[500px] rounded-full overflow-hidden border-[12px] border-white shadow-2xl transition-all duration-500 bg-mint-lightest">
+                                <img src="https://lh3.googleusercontent.com/d/1CdKfh7iH1pHn5RyYklGFBozLa0ths-5Y" alt="Ushan Damindu Kumara" class="w-full h-full object-cover scale-110 group-hover:scale-105 transition-transform duration-1000 ease-out" style="object-position: center 15%;">
+                                <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/5 pointer-events-none"></div>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 right-4 lg:bottom-12 lg:right-12 bg-white px-8 py-4 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.1)] border border-mint-lightest flex items-center space-x-4 transform group-hover:-translate-y-2 transition-transform">
+                            <span class="flex h-5 w-5 relative">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-mint-medium opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-5 w-5 bg-mint-medium"></span>
+                            </span>
+                            <span class="text-base font-black text-mint-dark uppercase tracking-tighter">Seeking Internships</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 text-center lg:text-left order-2 lg:order-1">
+                    <h1 class="text-4xl sm:text-6xl xl:text-7xl 2xl:text-8xl font-black text-gray-900 mb-8 leading-[1.1] tracking-tighter">
+                        I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-mint-medium via-mint-dark to-mint-medium">Ushan Damindu Kumara</span>
+                    </h1>
+                    <p class="text-2xl sm:text-3xl xl:text-4xl text-gray-500 mb-6 font-medium tracking-tight max-w-2xl leading-snug">AI/ML or Data Science Position</p>
+                    <p class="text-xl text-mint-dark font-bold mb-10 max-w-2xl leading-relaxed bg-mint-light/30 p-5 rounded-2xl inline-block border-l-8 border-mint-medium shadow-sm">
+                        Motivated fourth year BSc (Hons) Computer Science student with hands-on experience in Python, LLMs, and agentic AI workflows. Skilled in designing AI agents and building practical AI applications. Currently seeking <span class="underline decoration-mint-medium decoration-4 underline-offset-4 italic">internship opportunities</span> in AI, Machine Learning, or Data Science.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-6 sm:space-y-0 sm:space-x-8">
+                        <a href="#portfolio" class="group relative w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 font-black text-white transition-all duration-300 bg-mint-medium rounded-2xl hover:bg-mint-dark shadow-[0_20px_50px_rgba(72,_187,_120,_0.3)] hover:-translate-y-1 text-lg">
+                            Explore Projects
+                            <svg class="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
+                        </a>
+                        <button onclick="openCVModal()" class="group w-full sm:w-auto px-10 py-5 bg-white border-2 border-mint-light text-mint-dark font-black rounded-2xl hover:bg-mint-lightest hover:border-mint-medium transition-all shadow-xl hover:shadow-2xl text-center text-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 mr-3 group-hover:translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            Download CV
+                        </button>
+                        <a href="https://wa.me/94784368865?text=Hi%20Ushan,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20internship%20opportunity!" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-10 py-5 bg-mint-dark text-white font-black rounded-2xl hover:bg-black transition-all shadow-xl text-center text-lg">Hire Me</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="bg-white min-h-screen py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-20">
+                    <h2 class="text-4xl font-black text-gray-900 sm:text-5xl mb-6 uppercase tracking-tight">Expertise & Background</h2>
+                    <p class="text-2xl text-mint-dark font-bold mb-8">Solving complex problems with data.</p>
+                    <p class="text-xl text-gray-600 leading-relaxed max-w-4xl">
+                        Computer Science undergraduate specializing in Agentic AI and Data Science. I bridge the gap between abstract mathematics and autonomous intelligence.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                    <!-- Academic Journey & Experience -->
+                    <div class="space-y-16">
+                        <!-- Academic Journey -->
+                        <div>
+                            <div class="flex items-center space-x-4 mb-10">
+                                <div class="p-3 bg-mint-lightest rounded-2xl text-3xl">🎓</div>
+                                <h3 class="text-3xl font-black text-gray-900 uppercase tracking-tight">Academic Journey</h3>
+                            </div>
+                            <div class="space-y-12 border-l-4 border-mint-lightest pl-8 ml-6">
+                                <!-- Undergraduate -->
+                                <div class="relative">
+                                    <div class="absolute -left-[42px] top-0 w-5 h-5 bg-mint-medium rounded-full border-4 border-white shadow-sm"></div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="px-4 py-1 bg-mint-medium text-white text-xs font-black rounded-full uppercase tracking-widest">NOW</span>
+                                        <span class="text-sm font-bold text-gray-400">2022 – 2026</span>
+                                    </div>
+                                    <h4 class="text-xl font-black text-gray-900 mb-1">BSc (Hons) Computer Science</h4>
+                                    <p class="text-mint-dark font-bold mb-4">South Eastern University of Sri Lanka</p>
+                                    <p class="text-gray-500 leading-relaxed">A four-year degree program starting in the Physical Sciences stream, Specialization in Computer Science selected after the second year based on academic performance. Currently maintaining a Second Class Upper Division standing.</p>
+                                </div>
+                                <!-- Secondary Education -->
+                                <div class="relative">
+                                    <div class="absolute -left-[42px] top-0 w-5 h-5 bg-gray-200 rounded-full border-4 border-white shadow-sm"></div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="px-4 py-1 bg-gray-100 text-gray-400 text-xs font-black rounded-full uppercase tracking-widest">SCHL</span>
+                                        <span class="text-sm font-bold text-gray-400">2020</span>
+                                    </div>
+                                    <h4 class="text-xl font-black text-gray-900 mb-1">G.C.E. Advanced Level</h4>
+                                    <p class="text-mint-dark font-bold mb-4">MO/Okkampitya Vijaya Bahu Secondary School</p>
+                                    <div class="grid grid-cols-3 gap-4">
+                                        <div class="bg-gray-50 p-3 rounded-xl text-center"><p class="text-xs font-black text-gray-400 uppercase mb-1">Maths</p><p class="font-bold text-gray-900">Pass</p></div>
+                                        <div class="bg-gray-50 p-3 rounded-xl text-center"><p class="text-xs font-black text-gray-400 uppercase mb-1">Physics</p><p class="font-bold text-gray-900">Pass</p></div>
+                                        <div class="bg-gray-50 p-3 rounded-xl text-center"><p class="text-xs font-black text-gray-400 uppercase mb-1">Chemistry</p><p class="font-bold text-gray-900">Pass</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Experience -->
+                        <div>
+                            <div class="flex items-center space-x-4 mb-10">
+                                <div class="p-3 bg-mint-lightest rounded-2xl text-3xl">💼</div>
+                                <h3 class="text-3xl font-black text-gray-900 uppercase tracking-tight">Experience</h3>
+                            </div>
+                            <div class="space-y-12 border-l-4 border-mint-lightest pl-8 ml-6">
+                                <!-- Research -->
+                                <div class="relative">
+                                    <div class="absolute -left-[42px] top-0 w-5 h-5 bg-mint-medium rounded-full border-4 border-white shadow-sm"></div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="px-4 py-1 bg-mint-medium text-white text-xs font-black rounded-full uppercase tracking-widest">NOW</span>
+                                        <span class="text-sm font-bold text-gray-400">Ongoing</span>
+                                    </div>
+                                    <h4 class="text-xl font-black text-gray-900 mb-1">Research Student – AI Agent System</h4>
+                                    <p class="text-mint-dark font-bold mb-4">South Eastern University of Sri Lanka</p>
+                                    <p class="text-gray-500 leading-relaxed">Developing a Multi-Agent RAG grading system using FastAPI and LangGraph to automate academic evaluation (Ongoing).</p>
+                                </div>
+                                <!-- Creative -->
+                                <div class="relative">
+                                    <div class="absolute -left-[42px] top-0 w-5 h-5 bg-gray-200 rounded-full border-4 border-white shadow-sm"></div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="px-4 py-1 bg-gray-100 text-gray-400 text-xs font-black rounded-full uppercase tracking-widest">WORK</span>
+                                        <span class="text-sm font-bold text-gray-400">Jan 2022 – Jan 2025</span>
+                                    </div>
+                                    <h4 class="text-xl font-black text-gray-900 mb-1">Senior Creative Lead</h4>
+                                    <p class="text-mint-dark font-bold mb-4">Media Team & Gimhanayaka Maima Educational Program</p>
+                                    <p class="text-gray-500 leading-relaxed mb-4">Promoted from Junior to Senior roles across graphic design and video editing over a 3-year period.</p>
+                                    <div class="bg-mint-lightest/30 p-4 rounded-2xl">
+                                        <p class="text-xs font-black text-mint-dark uppercase tracking-widest mb-2">Key Achievements</p>
+                                        <p class="text-sm text-gray-600 flex items-start"><span class="mr-2">✦</span> ASRS 2024 Conference: Appreciated as a Creative Designer for outstanding design contributions</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technical Mastery -->
+                    <div class="bg-gray-50 rounded-[3rem] p-8 sm:p-12">
+                        <div class="flex items-center space-x-4 mb-12">
+                            <div class="p-3 bg-white rounded-2xl text-3xl shadow-sm">⚡</div>
+                            <h3 class="text-3xl font-black text-gray-900 uppercase tracking-tight">Technical Mastery</h3>
+                        </div>
+
+                        <div class="space-y-12">
+                            <!-- Programming & Tools -->
+                            <div>
+                                <div class="flex items-center space-x-3 mb-6">
+                                    <span class="text-2xl">⌨️</span>
+                                    <h4 class="text-xs font-black text-mint-dark uppercase tracking-[0.3em]">Programming & Tools</h4>
+                                </div>
+                                <div class="flex flex-wrap gap-3">
+                                    <span class="px-4 py-2 bg-white border border-mint-lightest rounded-xl font-bold text-gray-700 shadow-sm">Python</span>
+                                    <span class="px-4 py-2 bg-white border border-mint-lightest rounded-xl font-bold text-gray-700 shadow-sm">Java</span>
+                                    <span class="px-4 py-2 bg-white border border-mint-lightest rounded-xl font-bold text-gray-700 shadow-sm">MATLAB</span>
+                                    <span class="px-4 py-2 bg-white border border-mint-lightest rounded-xl font-bold text-gray-700 shadow-sm">SQL</span>
+                                    <span class="px-4 py-2 bg-white border border-mint-lightest rounded-xl font-bold text-gray-700 shadow-sm">Git</span>
+                                </div>
+                            </div>
+
+                            <!-- Databases & Cloud -->
+                            <div>
+                                <div class="flex items-center space-x-3 mb-6">
+                                    <span class="text-2xl">🗄️</span>
+                                    <h4 class="text-xs font-black text-mint-dark uppercase tracking-[0.3em]">Databases & Cloud</h4>
+                                </div>
+                                <div class="flex flex-wrap gap-3">
+                                    <span class="px-4 py-2 bg-white border border-mint-lightest rounded-xl font-bold text-gray-700 shadow-sm">MySQL</span>
+                                    <span class="px-4 py-2 bg-white border border-mint-lightest rounded-xl font-bold text-gray-700 shadow-sm">Chroma</span>
+                                    <span class="px-4 py-2 bg-white border border-mint-lightest rounded-xl font-bold text-gray-700 shadow-sm">FAISS</span>
+                                    <span class="px-4 py-2 bg-white border border-mint-lightest rounded-xl font-bold text-gray-700 shadow-sm">Microsoft Azure</span>
+                                    <span class="px-4 py-2 bg-white border border-mint-lightest rounded-xl font-bold text-gray-700 shadow-sm">AWS</span>
+                                </div>
+                            </div>
+
+                            <!-- Libraries & Frameworks -->
+                            <div>
+                                <div class="flex items-center space-x-3 mb-6">
+                                    <span class="text-2xl">🧠</span>
+                                    <h4 class="text-xs font-black text-mint-dark uppercase tracking-[0.3em]">Libraries & Frameworks</h4>
+                                </div>
+                                <div class="flex flex-wrap gap-3">
+                                    <span class="px-4 py-2 bg-white border border-mint-lightest rounded-xl font-bold text-gray-700 shadow-sm">Pandas</span>
+                                    <span class="px-4 py-2 bg-white border border-mint-lightest rounded-xl font-bold text-gray-700 shadow-sm">NumPy</span>
+                                    <span class="px-4 py-2 bg-white border border-mint-lightest rounded-xl font-bold text-gray-700 shadow-sm">Matplotlib</span>
+                                    <span class="px-4 py-2 bg-white border border-mint-lightest rounded-xl font-bold text-gray-700 shadow-sm">scikit-learn</span>
+                                    <span class="px-4 py-2 bg-white border border-mint-lightest rounded-xl font-bold text-gray-700 shadow-sm">LangChain</span>
+                                    <span class="px-4 py-2 bg-white border border-mint-lightest rounded-xl font-bold text-gray-700 shadow-sm">LangGraph</span>
+                                    <span class="px-4 py-2 bg-white border border-mint-lightest rounded-xl font-bold text-gray-700 shadow-sm">Seaborn</span>
+                                    <span class="px-4 py-2 bg-white border border-mint-lightest rounded-xl font-bold text-gray-700 shadow-sm">FastAPI</span>
+                                    <span class="px-4 py-2 bg-white border border-mint-lightest rounded-xl font-bold text-gray-700 shadow-sm">Streamlit</span>
+                                    <span class="px-4 py-2 bg-white border border-mint-lightest rounded-xl font-bold text-gray-700 shadow-sm">Hugging Face</span>
+                                </div>
+                            </div>
+
+                            <!-- Core Strengths -->
+                            <div>
+                                <div class="flex items-center space-x-3 mb-6">
+                                    <span class="text-2xl">💎</span>
+                                    <h4 class="text-xs font-black text-mint-dark uppercase tracking-[0.3em]">Core Strengths</h4>
+                                </div>
+                                <div class="flex flex-wrap gap-3">
+                                    <span class="px-5 py-3 bg-mint-medium text-white rounded-2xl font-black text-sm uppercase tracking-widest shadow-lg flex items-center"><span class="mr-2">✨</span> Agentic AI</span>
+                                    <span class="px-5 py-3 bg-mint-medium text-white rounded-2xl font-black text-sm uppercase tracking-widest shadow-lg flex items-center"><span class="mr-2">✨</span> Machine Learning</span>
+                                    <span class="px-5 py-3 bg-mint-medium text-white rounded-2xl font-black text-sm uppercase tracking-widest shadow-lg flex items-center"><span class="mr-2">✨</span> Data Analysis</span>
+                                    <span class="px-5 py-3 bg-mint-medium text-white rounded-2xl font-black text-sm uppercase tracking-widest shadow-lg flex items-center"><span class="mr-2">✨</span> NLP</span>
+                                    <span class="px-5 py-3 bg-mint-medium text-white rounded-2xl font-black text-sm uppercase tracking-widest shadow-lg flex items-center"><span class="mr-2">✨</span> Problem Solving</span>
+                                </div>
+                            </div>
+
+                            <!-- Languages -->
+                            <div>
+                                <div class="flex items-center space-x-3 mb-6">
+                                    <span class="text-2xl">🗣️</span>
+                                    <h4 class="text-xs font-black text-mint-dark uppercase tracking-[0.3em]">Languages</h4>
+                                </div>
+                                <div class="flex flex-wrap gap-3">
+                                    <span class="px-4 py-2 bg-white border border-mint-lightest rounded-xl font-bold text-gray-700 shadow-sm">Sinhala (Native)</span>
+                                    <span class="px-4 py-2 bg-white border border-mint-lightest rounded-xl font-bold text-gray-700 shadow-sm">English (Professional)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Badges -->
+                <div class="mt-24">
+                    <h3 class="text-2xl font-black text-gray-900 uppercase tracking-tight mb-10 flex items-center">
+                        <span class="p-2 bg-mint-lightest rounded-xl mr-4">🏆</span> Professional Badges
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="p-6 bg-white border border-gray-100 rounded-3xl hover:border-mint-medium transition-all shadow-sm flex items-start space-x-4">
+                            <span class="text-2xl">🏆</span>
+                            <div>
+                                <p class="font-bold text-gray-900">IBM Python for Data Science, AI & Development</p>
+                                <p class="text-sm text-gray-400">Coursera</p>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-white border border-gray-100 rounded-3xl hover:border-mint-medium transition-all shadow-sm flex items-start space-x-4">
+                            <span class="text-2xl">🏆</span>
+                            <div>
+                                <p class="font-bold text-gray-900">IBM Develop Generative AI Applications Certificate</p>
+                                <p class="text-sm text-gray-400">Coursera</p>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-white border border-gray-100 rounded-3xl hover:border-mint-medium transition-all shadow-sm flex items-start space-x-4">
+                            <span class="text-2xl">🏆</span>
+                            <div>
+                                <p class="font-bold text-gray-900">IBM Introduction to Data Science Certificate</p>
+                                <p class="text-sm text-gray-400">Coursera</p>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-white border border-gray-100 rounded-3xl hover:border-mint-medium transition-all shadow-sm flex items-start space-x-4">
+                            <span class="text-2xl">🏆</span>
+                            <div>
+                                <p class="font-bold text-gray-900">AWS Cloud Foundations Professional Certificate</p>
+                                <p class="text-sm text-gray-400">AWS Academy</p>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-white border border-gray-100 rounded-3xl hover:border-mint-medium transition-all shadow-sm flex items-start space-x-4">
+                            <span class="text-2xl">🏆</span>
+                            <div>
+                                <p class="font-bold text-gray-900">Google AI Essentials Certificate</p>
+                                <p class="text-sm text-gray-400">Coursera</p>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-white border border-gray-100 rounded-3xl hover:border-mint-medium transition-all shadow-sm flex items-start space-x-4">
+                            <span class="text-2xl">🏆</span>
+                            <div>
+                                <p class="font-bold text-gray-900">Generative AI: Prompt Engineering Basics</p>
+                                <p class="text-sm text-gray-400">Coursera</p>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-white border border-gray-100 rounded-3xl hover:border-mint-medium transition-all shadow-sm flex items-start space-x-4">
+                            <span class="text-2xl">🏆</span>
+                            <div>
+                                <p class="font-bold text-gray-900">Git for Beginners</p>
+                                <p class="text-sm text-gray-400">Udemy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="bg-mint-lightest/30 min-h-screen py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl font-black text-gray-900 sm:text-5xl mb-6 uppercase tracking-tight">Expert Solutions</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Offering a blend of technical expertise and creative problem solving.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Agentic Systems -->
+                    <div class="bg-white p-10 rounded-[2.5rem] border border-mint-light/30 shadow-sm hover:shadow-xl transition-all hover:-translate-y-2 group">
+                        <div class="text-5xl mb-8 group-hover:scale-110 transition-transform inline-block">🤖</div>
+                        <h3 class="text-2xl font-black text-gray-900 mb-5">Agentic Systems</h3>
+                        <p class="text-gray-600 leading-relaxed">Developing autonomous AI agents capable of goal-directed reasoning and executing complex multi-step tasks.</p>
+                    </div>
+                    <!-- Multi-Agentic RAG Systems -->
+                    <div class="bg-white p-10 rounded-[2.5rem] border border-mint-light/30 shadow-sm hover:shadow-xl transition-all hover:-translate-y-2 group">
+                        <div class="text-5xl mb-8 group-hover:scale-110 transition-transform inline-block">🧠</div>
+                        <h3 class="text-2xl font-black text-gray-900 mb-5">Multi-Agentic RAG Systems</h3>
+                        <p class="text-gray-600 leading-relaxed">Building advanced Retrieval-Augmented Generation systems that utilize specialized agents for better data retrieval and synthesis.</p>
+                    </div>
+                    <!-- Data Science Projects -->
+                    <div class="bg-white p-10 rounded-[2.5rem] border border-mint-light/30 shadow-sm hover:shadow-xl transition-all hover:-translate-y-2 group">
+                        <div class="text-5xl mb-8 group-hover:scale-110 transition-transform inline-block">📊</div>
+                        <h3 class="text-2xl font-black text-gray-900 mb-5">Data Science Projects</h3>
+                        <p class="text-gray-600 leading-relaxed">End-to-end data solutions including statistical modeling, predictive analytics, and insightful data visualization.</p>
+                    </div>
+                </div>
+
+                <div class="mt-20 bg-mint-dark rounded-[3rem] p-10 sm:p-16 text-center text-white relative overflow-hidden">
+                    <div class="relative z-10">
+                        <h3 class="text-3xl sm:text-4xl font-black mb-6">Have a specific requirement?</h3>
+                        <p class="text-xl text-mint-lightest/80 mb-10 max-w-2xl mx-auto">I'm always open to new projects and collaboration opportunities. Let's build something amazing together.</p>
+                        <a href="https://wa.me/94784368865?text=Hi%20Ushan,%20I%20have%20a%20project%20requirement%20I'd%20like%20to%20discuss!" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-10 py-5 bg-white text-mint-dark font-black rounded-2xl hover:bg-mint-lightest transition-all shadow-xl text-lg">
+                            Chat on WhatsApp
+                            <svg class="w-6 h-6 ml-3" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.634 1.437h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </a>
+                    </div>
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="bg-white min-h-screen py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl font-black text-gray-900 sm:text-5xl mb-6 uppercase tracking-tight">Featured Projects</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">A showcase of high-impact work in AI, Data Science, and IoT.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Multi-Agent RAG System -->
+                    <div class="bg-white rounded-[3rem] overflow-hidden shadow-sm border border-mint-lightest hover:border-mint-medium transition-all group flex flex-col">
+                        <div class="p-10 flex-grow">
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-mint-lightest text-mint-dark text-[10px] font-black uppercase tracking-widest rounded-full">FastAPI</span>
+                                <span class="px-3 py-1 bg-mint-lightest text-mint-dark text-[10px] font-black uppercase tracking-widest rounded-full">LangGraph</span>
+                                <span class="px-3 py-1 bg-mint-lightest text-mint-dark text-[10px] font-black uppercase tracking-widest rounded-full">Agentic AI</span>
+                                <span class="px-3 py-1 bg-mint-lightest text-mint-dark text-[10px] font-black uppercase tracking-widest rounded-full">RAG</span>
+                            </div>
+                            <h3 class="text-3xl font-black text-gray-900 mb-5 leading-tight group-hover:text-mint-medium transition-colors">Multi-Agent RAG System for Automated Grading</h3>
+                            <p class="text-gray-600 text-lg leading-relaxed mb-8">Developing a Multi-Agent RAG grading system using FastAPI and LangGraph to automate academic evaluation.</p>
+                        </div>
+                        <div class="px-10 pb-10 mt-auto">
+                            <a href="https://github.com/UshanDaminduKumara" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-mint-dark font-black uppercase tracking-widest text-sm group-hover:translate-x-2 transition-transform">
+                                View on GitHub <span class="ml-3 text-xl">→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- AI Agent Chatbot -->
+                    <div class="bg-white rounded-[3rem] overflow-hidden shadow-sm border border-mint-lightest hover:border-mint-medium transition-all group flex flex-col">
+                        <div class="p-10 flex-grow">
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-mint-lightest text-mint-dark text-[10px] font-black uppercase tracking-widest rounded-full">FastAPI</span>
+                                <span class="px-3 py-1 bg-mint-lightest text-mint-dark text-[10px] font-black uppercase tracking-widest rounded-full">React</span>
+                                <span class="px-3 py-1 bg-mint-lightest text-mint-dark text-[10px] font-black uppercase tracking-widest rounded-full">Streamlit</span>
+                                <span class="px-3 py-1 bg-mint-lightest text-mint-dark text-[10px] font-black uppercase tracking-widest rounded-full">Gemini</span>
+                                <span class="px-3 py-1 bg-mint-lightest text-mint-dark text-[10px] font-black uppercase tracking-widest rounded-full">OpenAI</span>
+                            </div>
+                            <h3 class="text-3xl font-black text-gray-900 mb-5 leading-tight group-hover:text-mint-medium transition-colors">AI Agent Chatbot</h3>
+                            <p class="text-gray-600 text-lg leading-relaxed mb-8">Developed a modular chatbot using FastAPI to implement a React framework for autonomous tool use. Orchestrated a multi-model system integrating Google Gemini, OpenAI, and Groq, featuring real-time web search via Tavly AI.</p>
+                        </div>
+                        <div class="px-10 pb-10 mt-auto">
+                            <a href="https://github.com/UshanDaminduKumara/AI_Agentic_Chatbot.git" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-mint-dark font-black uppercase tracking-widest text-sm group-hover:translate-x-2 transition-transform">
+                                View on GitHub <span class="ml-3 text-xl">→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- AI-powered Tic Tac Toe -->
+                    <div class="bg-white rounded-[3rem] overflow-hidden shadow-sm border border-mint-lightest hover:border-mint-medium transition-all group flex flex-col">
+                        <div class="p-10 flex-grow">
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-mint-lightest text-mint-dark text-[10px] font-black uppercase tracking-widest rounded-full">Python</span>
+                                <span class="px-3 py-1 bg-mint-lightest text-mint-dark text-[10px] font-black uppercase tracking-widest rounded-full">Game Theory</span>
+                                <span class="px-3 py-1 bg-mint-lightest text-mint-dark text-[10px] font-black uppercase tracking-widest rounded-full">Minimax</span>
+                            </div>
+                            <h3 class="text-3xl font-black text-gray-900 mb-5 leading-tight group-hover:text-mint-medium transition-colors">AI-powered Tic Tac Toe Game</h3>
+                            <p class="text-gray-600 text-lg leading-relaxed mb-8">System built using game-theory principles and the Minimax adversarial search model.</p>
+                        </div>
+                        <div class="px-10 pb-10 mt-auto">
+                            <a href="https://github.com/UshanDaminduKumara/Tic-Tac-Toe-Game-Game-Theory-Minimax.git" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-mint-dark font-black uppercase tracking-widest text-sm group-hover:translate-x-2 transition-transform">
+                                View on GitHub <span class="ml-3 text-xl">→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Fingerprint Attendance -->
+                    <div class="bg-white rounded-[3rem] overflow-hidden shadow-sm border border-mint-lightest hover:border-mint-medium transition-all group flex flex-col">
+                        <div class="p-10 flex-grow">
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-mint-lightest text-mint-dark text-[10px] font-black uppercase tracking-widest rounded-full">Arduino</span>
+                                <span class="px-3 py-1 bg-mint-lightest text-mint-dark text-[10px] font-black uppercase tracking-widest rounded-full">Java Swing</span>
+                                <span class="px-3 py-1 bg-mint-lightest text-mint-dark text-[10px] font-black uppercase tracking-widest rounded-full">IoT</span>
+                            </div>
+                            <h3 class="text-3xl font-black text-gray-900 mb-5 leading-tight group-hover:text-mint-medium transition-colors">Fingerprint-based Attendance System</h3>
+                            <p class="text-gray-600 text-lg leading-relaxed mb-8">Led a 3rd-year group project to develop a fingerprint-based attendance system using Arduino for biometric data capture and Java Swing for an interactive dashboard interface.</p>
+                        </div>
+                        <div class="px-10 pb-10 mt-auto">
+                            <a href="https://github.com/UshanDaminduKumara/Fingerprint-Based-Attendance-Management-System.git" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-mint-dark font-black uppercase tracking-widest text-sm group-hover:translate-x-2 transition-transform">
+                                View on GitHub <span class="ml-3 text-xl">→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Movie Recommendation -->
+                    <div class="bg-white rounded-[3rem] overflow-hidden shadow-sm border border-mint-lightest hover:border-mint-medium transition-all group flex flex-col">
+                        <div class="p-10 flex-grow">
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-mint-lightest text-mint-dark text-[10px] font-black uppercase tracking-widest rounded-full">Python</span>
+                                <span class="px-3 py-1 bg-mint-lightest text-mint-dark text-[10px] font-black uppercase tracking-widest rounded-full">scikit-learn</span>
+                                <span class="px-3 py-1 bg-mint-lightest text-mint-dark text-[10px] font-black uppercase tracking-widest rounded-full">Streamlit</span>
+                                <span class="px-3 py-1 bg-mint-lightest text-mint-dark text-[10px] font-black uppercase tracking-widest rounded-full">EDA</span>
+                            </div>
+                            <h3 class="text-3xl font-black text-gray-900 mb-5 leading-tight group-hover:text-mint-medium transition-colors">Movie Recommendation System</h3>
+                            <p class="text-gray-600 text-lg leading-relaxed mb-8">Kaggle dataset, EDA, semantic similarity (scikit-learn). Built an interactive recommender using Streamlit.</p>
+                        </div>
+                        <div class="px-10 pb-10 mt-auto">
+                            <a href="https://github.com/UshanDaminduKumara/movie-recommender-system.git" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-mint-dark font-black uppercase tracking-widest text-sm group-hover:translate-x-2 transition-transform">
+                                View on GitHub <span class="ml-3 text-xl">→</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Stats -->
+                <div class="mt-32 grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+                    <div class="lg:col-span-2">
+                        <h3 class="text-3xl font-black text-gray-900 mb-8 uppercase tracking-tight italic">"Precision, Performance, and Purpose"</h3>
+                        <p class="text-xl text-gray-500 leading-relaxed">
+                            My portfolio includes a mix of real‑world solutions and concept‑focused projects. The automated grading system and biometric attendance system address practical problems, while the remaining projects highlight my understanding of core AI/ML principles.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-mint-lightest/50 p-8 rounded-[2.5rem] text-center">
+                            <p class="text-5xl font-black text-mint-dark mb-2">5+</p>
+                            <p class="text-xs font-black text-gray-400 uppercase tracking-widest">Successful Projects</p>
+                        </div>
+                        <div class="bg-mint-lightest/50 p-8 rounded-[2.5rem] text-center">
+                            <p class="text-5xl font-black text-mint-dark mb-2">AI</p>
+                            <p class="text-xs font-black text-gray-400 uppercase tracking-widest">Specialization</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-white min-h-screen py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl font-black text-gray-900 sm:text-6xl mb-6 uppercase tracking-tight">Get In Touch</h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">I am always open to discussing new opportunities, collaborations, or innovative AI projects.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <!-- Direct Info -->
+                    <div class="bg-mint-dark text-white p-12 sm:p-16 rounded-[4rem] shadow-2xl relative overflow-hidden group">
+                        <div class="relative z-10">
+                            <div class="flex items-center space-x-4 mb-10">
+                                <span class="px-4 py-1 bg-white/20 rounded-full text-xs font-black uppercase tracking-widest">Direct Info</span>
+                                <span class="text-xs font-bold text-mint-lightest/60">Available for projects</span>
+                            </div>
+                            
+                            <div class="space-y-12">
+                                <div class="flex items-start space-x-6">
+                                    <div class="p-4 bg-white/10 rounded-2xl text-2xl">📱</div>
+                                    <div>
+                                        <p class="text-xs font-black text-mint-lightest/60 uppercase tracking-widest mb-2">WhatsApp / Phone</p>
+                                        <p class="text-2xl font-black tracking-tight">+94 78 436 8865</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-6">
+                                    <div class="p-4 bg-white/10 rounded-2xl text-2xl">📧</div>
+                                    <div>
+                                        <p class="text-xs font-black text-mint-lightest/60 uppercase tracking-widest mb-2">Professional Email</p>
+                                        <p class="text-2xl font-black tracking-tight">ushandamindukumara1@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-6">
+                                    <div class="p-4 bg-white/10 rounded-2xl text-2xl">🔗</div>
+                                    <div>
+                                        <p class="text-xs font-black text-mint-lightest/60 uppercase tracking-widest mb-2">Professional Network</p>
+                                        <a href="https://www.linkedin.com/in/ushan-damindu-kumara-311a56334" target="_blank" rel="noopener noreferrer" class="text-2xl font-black tracking-tight hover:text-mint-light transition-colors flex items-center">
+                                            LinkedIn Profile <span class="ml-3 text-xl group-hover:translate-x-2 transition-transform">→</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Abstract Background Elements -->
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+                        <div class="absolute bottom-0 left-0 w-48 h-48 bg-mint-medium/20 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl"></div>
+                    </div>
+
+                    <!-- Quote/Message -->
+                    <div class="flex flex-col justify-center">
+                        <div class="relative">
+                            <span class="text-9xl font-black text-mint-lightest absolute -top-20 -left-10 -z-10 opacity-50">“</span>
+                            <p class="text-4xl sm:text-5xl font-black text-gray-900 leading-tight tracking-tighter mb-10">
+                                Digital communication is the heartbeat of modern collaboration.
+                            </p>
+                        </div>
+                        <div class="flex items-center space-x-6">
+                            <div class="w-20 h-1 bg-mint-medium rounded-full"></div>
+                            <p class="text-xl font-bold text-mint-dark">Let's build the future together.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-white border-t border-gray-100 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center space-x-16 mb-10">
+                <a href="https://www.linkedin.com/in/ushan-damindu-kumara-311a56334" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-mint-medium transition-all font-black uppercase tracking-[0.2em] text-sm">LinkedIn</a>
+                <a href="https://github.com/UshanDaminduKumara" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-mint-medium transition-all font-black uppercase tracking-[0.2em] text-sm">GitHub</a>
+                <a href="mailto:ushandamindukumara1@gmail.com" class="text-gray-500 hover:text-mint-medium transition-all font-black uppercase tracking-[0.2em] text-sm">Email</a>
+            </div>
+            <p class="text-gray-500 text-base font-medium tracking-tight">
+                &copy; 2026 Ushan Damindu Kumara. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- CV Modal -->
+    <div id="cv-modal" class="hidden fixed inset-0 z-[60] flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-mint-dark/40 backdrop-blur-sm" onclick="closeCVModal()"></div>
+        <div class="relative bg-white w-full max-w-lg rounded-[2.5rem] shadow-2xl overflow-hidden transform transition-all">
+            <div class="bg-mint-medium p-8 text-white relative">
+                <button onclick="closeCVModal()" class="absolute top-6 right-6 p-2 hover:bg-white/20 rounded-full transition-colors">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                <h3 class="text-3xl font-black tracking-tight mb-2">Select CV Version</h3>
+                <p class="text-mint-lightest font-medium">Choose the version that fits your needs.</p>
+            </div>
+            <div class="p-8 space-y-4">
+                <a href="https://drive.google.com/file/d/1vyOYNza9o78V0NxgEJvSEq4bW68Is-4o/view?usp=drive_link" target="_blank" class="group flex items-start p-6 bg-mint-lightest/50 border-2 border-transparent hover:border-mint-medium hover:bg-white rounded-3xl transition-all duration-300">
+                    <div class="text-4xl mr-6 bg-white w-14 h-14 flex items-center justify-center rounded-2xl shadow-sm group-hover:scale-110 transition-transform">🤖</div>
+                    <div>
+                        <h4 class="text-xl font-black text-gray-900 mb-1">AI/ML Engineering CV</h4>
+                        <p class="text-sm text-gray-500 font-medium">Tailored for roles in Machine Learning and AI Engineering.</p>
+                    </div>
+                </a>
+                <a href="https://drive.google.com/file/d/1vyOYNza9o78V0NxgEJvSEq4bW68Is-4o/view?usp=drive_link" target="_blank" class="group flex items-start p-6 bg-mint-lightest/50 border-2 border-transparent hover:border-mint-medium hover:bg-white rounded-3xl transition-all duration-300">
+                    <div class="text-4xl mr-6 bg-white w-14 h-14 flex items-center justify-center rounded-2xl shadow-sm group-hover:scale-110 transition-transform">🧠</div>
+                    <div>
+                        <h4 class="text-xl font-black text-gray-900 mb-1">AI Specialist CV</h4>
+                        <p class="text-sm text-gray-500 font-medium">Focused on Artificial Intelligence and Agentic systems.</p>
+                    </div>
+                </a>
+                <a href="https://drive.google.com/file/d/1GAkhvOtUtGhTU7KRte2RjAtnQdKjHAcE/view?usp=sharing" target="_blank" class="group flex items-start p-6 bg-mint-lightest/50 border-2 border-transparent hover:border-mint-medium hover:bg-white rounded-3xl transition-all duration-300">
+                    <div class="text-4xl mr-6 bg-white w-14 h-14 flex items-center justify-center rounded-2xl shadow-sm group-hover:scale-110 transition-transform">📊</div>
+                    <div>
+                        <h4 class="text-xl font-black text-gray-900 mb-1">Data Science CV</h4>
+                        <p class="text-sm text-gray-500 font-medium">Tailored for Data Science, Analytics, and Data Engineering roles.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
