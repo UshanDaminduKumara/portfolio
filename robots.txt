@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ushandamindukumara.github.io/portfolio/sitemap.xml
